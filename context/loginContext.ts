@@ -2,7 +2,12 @@
 import { createContext } from "react";
 
 const LoginContext = createContext({
-  isLogin: localStorage.getItem("authenticatedUser") ? true: false,
+  isLogin:
+    typeof window !== "undefined"
+      ? window.localStorage.getItem("authenticatedUser")
+        ? true
+        : false
+      : false,
   //@ts-ignore
   setIsLogin: (value: ((prevState: boolean) => boolean) | boolean) => {},
 });
