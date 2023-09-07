@@ -6,8 +6,8 @@ import globalStyles from "@/utils/global";
 import axios from "axios";
 import { useRouter } from "next/navigation";
 import { useContext } from "react";
-import LoginContext from "@/context/loginContext";
 import { compare } from "bcryptjs";
+import { LoginContext } from "@/context/loginContext";
 
 interface UserData {
   [x: string]: any;

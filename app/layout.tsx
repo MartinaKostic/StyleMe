@@ -1,10 +1,8 @@
-"use client";
+import { LoginProvider } from "@/context/loginContext";
 import "../styles/global.css";
 import type { Metadata } from "next";
 import { Marmelad } from "next/font/google";
-import LoginContext from "@/context/loginContext";
-import React from "react";
-import { useContext } from "react";
+
 const marmelad = Marmelad({ weight: "400", subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -17,17 +15,13 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  const loginContext = useContext(LoginContext);
-  const [isLogin, setIsLogin] = React.useState(loginContext.isLogin);
   return (
     <html
       lang="en"
       className="min-h-screen bg-background text-text_color relative z-[1]"
     >
       <body className={marmelad.className}>
-        <LoginContext.Provider value={{ isLogin, setIsLogin }}>
-          {children}
-        </LoginContext.Provider>
+        <LoginProvider>{children}</LoginProvider>
       </body>
     </html>
   );

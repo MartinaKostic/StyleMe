@@ -50,8 +50,9 @@ export default function SignUp() {
           }
         })
         .catch((error) => {
+          router.push("/signin");
           console.error(error);
-          setErrorMessage("An error occurred while signing up.");
+          //   setErrorMessage("An error occurred while signing up.");
         });
     } catch (error) {
       console.error(error);
