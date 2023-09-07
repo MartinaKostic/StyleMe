@@ -1,0 +1,24 @@
+@import url("https://fonts.googleapis.com/css2?family=Marmelad&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+* {
+  box-sizing: border-box;
+}
+body,
+html {
+  margin: 0px;
+  padding: 0px;
+}
+/* styles/globals.css */
+
+.nav-link:hover {
+  @apply border-b-4 border-hotpink;
+}
+.active {
+  @apply border-b-4 border-hotpink;
+}
+
+.active:hover {
+  @apply border-b-0;
+}
