@@ -92,7 +92,7 @@ export default function StyleInspo() {
                       ...
                     </p>
                     <div className="flex justify-end">
-                      <Link href={`/styleinspo/${inspo.title}`}>
+                      <Link href={`/styleinspo/${inspo.id}`}>
                         <button className="border my-5 border-text_color h-10 w-[250px] relative hover-button text-lg">
                           <span>More...</span>
                           <style jsx global>
@@ -135,7 +135,7 @@ export default function StyleInspo() {
                       ...
                     </p>
                     <div className="flex justify-end">
-                      <Link href={`/styleinspo/${inspo.title}`}>
+                      <Link href={`/styleinspo/${inspo.id}`}>
                         <button className="border my-5 border-text_color h-10 w-[250px] relative hover-button text-lg">
                           <span>More...</span>
                           <style jsx global>
