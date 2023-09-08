@@ -68,12 +68,12 @@ export default function SignIn() {
             JSON.stringify(user.username)
           );
           loginContext.setIsLogin(true);
-          router.push("/quiz");
+          router.push("/blog");
         } else {
           setErrorMessage("Invalid username or password");
         }
       } else {
-        setErrorMessage("User not found in JSON file");
+        setErrorMessage("Invalid username or password");
       }
     } catch (error) {
       console.error(error);
@@ -94,9 +94,6 @@ export default function SignIn() {
           </div>
           <form>
             <div className="my-10">
-              {/* <label htmlFor="name" className="block  font-medium mb-2">
-                Username
-              </label> */}
               <input
                 type="text"
                 className="border w-full py-2 px-3 leading-tight focus:outline-none  focus:border-hotpink"
@@ -106,9 +103,6 @@ export default function SignIn() {
               />
             </div>
             <div className="my-10">
-              {/* <label htmlFor="password" className="block0 font-medium mb-2">
-                Password
-              </label> */}
               <input
                 type="password"
                 className="border rounded w-full py-2 px-3 leading-tight focus:outline-none focus:border-hotpink"
@@ -130,6 +124,8 @@ export default function SignIn() {
                   {globalStyles}
                 </style>
               </button>
+            </div>
+            <div className="flex justify-end">
               {errorMessage && <p className="text-red-500">{errorMessage}</p>}
             </div>
           </form>
