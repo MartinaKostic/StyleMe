@@ -1,5 +1,5 @@
 import React from "react";
-import pic from "@/public/03.png";
+import pic from "/public/03.png";
 import Image from "next/image";
 
 export default function NotFound() {
