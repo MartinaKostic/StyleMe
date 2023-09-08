@@ -69,81 +69,87 @@ export default function StyleInspo() {
         </div>
       </div>
       {/* ALOOOOOOO */}
-      <div className="min-h-screen">
-        {inspo.map((inspo: any, index: number) =>
-          index % 2 === 0 ? (
-            <div
-              key={index}
-              className="mb-20 grid lg:grid-cols-10 sm:grid-rows-10"
-            >
-              <div className="col-start-2 col-span-5">
-                <h1 className="my-5 bg-hotpink text-center text-2xl py-1">
-                  {inspo.title}
-                </h1>
-              </div>
-              <div className="col-start-2 col-span-4 m-5 mx-16">
-                <p>
-                  {inspo.body[0].content.slice(0, 300)}
-                  ...
-                </p>
-                <div className="flex justify-end">
-                  <Link href={`/styleinspo/${inspo.title}`}>
-                    <button className="border my-5 border-text_color h-10 w-[250px] relative hover-button text-lg">
-                      <span>More...</span>
-                      <style jsx global>
-                        {globalStyles}
-                      </style>
-                    </button>
-                  </Link>
+      {inspo && inspo.length > 0 && (
+        <div className="min-h-screen">
+          {inspo
+            .filter((inspo) =>
+              inspo.title.toLowerCase().includes(search.toLowerCase())
+            )
+            .map((inspo: any, index: number) =>
+              index % 2 === 0 ? (
+                <div
+                  key={index}
+                  className="mb-20 grid lg:grid-cols-10 sm:grid-rows-10"
+                >
+                  <div className="col-start-2 col-span-5">
+                    <h1 className="my-5 bg-hotpink text-center text-2xl py-1">
+                      {inspo.title}
+                    </h1>
+                  </div>
+                  <div className="col-start-2 col-span-4 m-5 mx-16">
+                    <p>
+                      {inspo.body[0].content.slice(0, 300)}
+                      ...
+                    </p>
+                    <div className="flex justify-end">
+                      <Link href={`/styleinspo/${inspo.title}`}>
+                        <button className="border my-5 border-text_color h-10 w-[250px] relative hover-button text-lg">
+                          <span>More...</span>
+                          <style jsx global>
+                            {globalStyles}
+                          </style>
+                        </button>
+                      </Link>
+                    </div>
+                  </div>
+                  <div className="h-72 w-128 relative col-start-6 col-span-4">
+                    <Image
+                      src={`/${inspo.image}`}
+                      alt="inspo_image"
+                      fill={true}
+                      style={{ objectFit: "cover" }}
+                    ></Image>
+                  </div>
                 </div>
-              </div>
-              <div className="h-72 w-128 relative col-start-6 col-span-4">
-                <Image
-                  src={`/${inspo.image}`}
-                  alt="inspo_image"
-                  fill={true}
-                  style={{ objectFit: "cover" }}
-                ></Image>
-              </div>
-            </div>
-          ) : (
-            <div
-              key={index}
-              className="mb-20 grid lg:grid-cols-10 sm:grid-rows-10"
-            >
-              <div className="col-start-5 col-span-5">
-                <h1 className="my-5 bg-hotpink text-center text-2xl py-1">
-                  {inspo.title}
-                </h1>
-              </div>
-              <div className="h-72 w-128 relative col-start-2 col-span-4">
-                <Image
-                  src={`/${inspo.image}`}
-                  alt="inspo_image"
-                  fill={true}
-                  style={{ objectFit: "cover" }}
-                ></Image>
-              </div>
-              <div className="col-start-6 col-span-4 m-5 mr-16">
-                <p>
-                  {inspo.body[0].content.slice(0, 300)}
-                  ...
-                </p>
-                <div className="flex justify-end">
-                  <Link href={`/styleinspo/${inspo.title}`}>
-                    <button className="border my-5 border-text_color h-10 w-[250px] relative hover-button text-lg">
-                      <span>More...</span>
-                      <style jsx global>
-                        {globalStyles}
-                      </style>
-                    </button>
-                  </Link>
+              ) : (
+                <div
+                  key={index}
+                  className="mb-20 grid lg:grid-cols-10 sm:grid-rows-10"
+                >
+                  <div className="col-start-5 col-span-5">
+                    <h1 className="my-5 bg-hotpink text-center text-2xl py-1">
+                      {inspo.title}
+                    </h1>
+                  </div>
+                  <div className="h-72 w-128 relative col-start-2 col-span-4">
+                    <Image
+                      src={`/${inspo.image}`}
+                      alt="inspo_image"
+                      fill={true}
+                      style={{ objectFit: "cover" }}
+                    ></Image>
+                  </div>
+                  <div className="col-start-6 col-span-4 m-5 mr-16">
+                    <p>
+                      {inspo.body[0].content.slice(0, 300)}
+                      ...
+                    </p>
+                    <div className="flex justify-end">
+                      <Link href={`/styleinspo/${inspo.title}`}>
+                        <button className="border my-5 border-text_color h-10 w-[250px] relative hover-button text-lg">
+                          <span>More...</span>
+                          <style jsx global>
+                            {globalStyles}
+                          </style>
+                        </button>
+                      </Link>
+                    </div>
+                  </div>
                 </div>
-              </div>
-            </div>
-          )
-        )}
-      </div>
+              )
+            )}
+        </div>
+      )}
       <div className="absolute h-[40rem] w-[40rem] -right-0 bottom-0 -z-[10] overflow-hidden">
         <div className="bg-pink rounded-full w-full h-full absolute -right-36 -bottom-3"></div>
       </div>
