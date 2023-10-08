@@ -52,7 +52,6 @@ export default function SignUp() {
         .catch((error) => {
           router.push("/signin");
           console.error(error);
-          //   setErrorMessage("An error occurred while signing up.");
         });
     } catch (error) {
       console.error(error);
@@ -73,9 +72,6 @@ export default function SignUp() {
           </div>
           <form onSubmit={handleSubmit(onSubmit)}>
             <div className="my-10">
-              {/* <label htmlFor="name" className="block  font-medium mb-2">
-                Userame
-              </label> */}
               <input
                 type="text"
                 placeholder="Username"
@@ -87,9 +83,6 @@ export default function SignUp() {
               )}
             </div>
             <div className="my-10">
-              {/* <label htmlFor="email" className="block font-medium mb-2">
-                Email
-              </label> */}
               <input
                 type="email"
                 placeholder="Email"
@@ -103,9 +96,6 @@ export default function SignUp() {
               )}
             </div>
             <div className="my-10">
-              {/* <label htmlFor="password" className="block0 font-medium mb-2">
-                Password
-              </label> */}
               <input
                 type="password"
                 placeholder="Password"

@@ -2,7 +2,6 @@ import { Params } from "next/dist/shared/lib/router/utils/route-matcher";
 import Header from "../../../components/Header";
 import Footer from "../../../components/Footer";
 import Image from "next/image";
-import path from "path";
 
 interface ContentProps {
   id: string;

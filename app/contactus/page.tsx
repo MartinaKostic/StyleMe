@@ -3,7 +3,6 @@ import React from "react";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import globalStyles from "@/utils/global";
-import { useRouter } from "next/navigation";
 
 export default function ContactUs() {
   return (
@@ -28,7 +27,7 @@ export default function ContactUs() {
             <div className="my-10">
               <textarea
                 className="border w-full py-2 px-3 leading-tight focus:outline-none focus:border-hotpink"
-                rows="4" // You can adjust the number of visible rows here
+                rows={4}
                 placeholder="Your message"
               ></textarea>
             </div>

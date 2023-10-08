@@ -82,7 +82,7 @@ export default function Blog() {
           blogs.length > 0 && (
             <div className="min-h-screen">
               {blogs
-                .filter((blog) =>
+                .filter((blog: { title: string }) =>
                   blog.title.toLowerCase().includes(search.toLowerCase())
                 )
                 .map((blog: any, index: number) =>
