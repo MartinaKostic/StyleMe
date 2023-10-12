@@ -1,10 +1,8 @@
-import Link from "next/link";
 import { FaFacebookSquare } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa";
 import { FaYoutube } from "react-icons/fa";
 
 const Footer = () => {
-  //napravit da je follow us u centru, styleme and contact us na krajevima
   return (
     <>
       <footer className="bg-pink p-4 text-center bottom-0 w-full">
