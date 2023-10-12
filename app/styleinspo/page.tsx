@@ -72,7 +72,7 @@ export default function StyleInspo() {
       {inspo && inspo.length > 0 && (
         <div className="min-h-screen">
           {inspo
-            .filter((inspo) =>
+            .filter((inspo: any) =>
               inspo.title.toLowerCase().includes(search.toLowerCase())
             )
             .map((inspo: any, index: number) =>

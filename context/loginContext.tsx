@@ -14,7 +14,7 @@ export const LoginContext = createContext({
   setIsLogin: (value: ((prevState: boolean) => boolean) | boolean) => {},
 });
 
-export function LoginProvider({ children }) {
+export function LoginProvider({ children }: any) {
   const loginContext = useContext(LoginContext);
   const [isLogin, setIsLogin] = React.useState(loginContext.isLogin);
   return (
